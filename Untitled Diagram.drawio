@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2021-10-14T02:59:25.761Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" etag="LCi7i1D09p4p21eP6zR2" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-14T06:06:31.897Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" etag="2wPLaATmabdyVVNwBNdw" version="15.5.2" type="github">
   <diagram id="Q8tGpgMSQx5R1TBB-q-l" name="Page-1">
-    <mxGraphModel dx="1239" dy="1072" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1239" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="5F3VnkXnHqMvUYfFMPts-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-2" target="5F3VnkXnHqMvUYfFMPts-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5F3VnkXnHqMvUYfFMPts-2" value="每次从现有的所有宿主机中（首先排除所有hpc宿主机）&lt;br&gt;找出cpu资源使用最少的 top20宿主机 开始迁移&lt;br&gt;以20台为单位进行迁移&lt;br&gt;并将所选20台宿主机记录到ops相关日志" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-2" value="每次从现有的所有宿主机中（首先排除所有hpc宿主机以及过滤出的cpu资源使用率最低的top200宿主机）&lt;br&gt;找出cpu资源使用最少的 top20宿主机 开始迁移&lt;br&gt;以20台为单位进行迁移&lt;br&gt;并将所选20台宿主机记录到ops相关日志" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1085.5" y="70" width="311" height="80" as="geometry" />
         </mxCell>
         <mxCell id="5F3VnkXnHqMvUYfFMPts-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-3" target="5F3VnkXnHqMvUYfFMPts-4">

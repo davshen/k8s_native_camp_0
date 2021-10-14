@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2021-10-14T02:09:08.544Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" version="15.5.2" etag="ov93KreFSaB_5u9zuVYI" type="github"><diagram id="Q8tGpgMSQx5R1TBB-q-l">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-14T02:35:00.227Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36" etag="9IxAgjxgWF9BCV7RlmxO" version="15.5.2" type="github">
+  <diagram id="Q8tGpgMSQx5R1TBB-q-l" name="Page-1">
+    <mxGraphModel dx="1239" dy="1072" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-1" target="5F3VnkXnHqMvUYfFMPts-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-1" value="需要被清空的200台宿主机" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1151" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-2" target="5F3VnkXnHqMvUYfFMPts-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-2" value="以20台为单位进行迁移&lt;br&gt;（同宿主机组即同型号）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1166" y="130" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-3" target="5F3VnkXnHqMvUYfFMPts-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-3" value="选择目标宿主机&lt;br&gt;（同宿主机组，且目标宿主机上没有同前缀VM存在）&lt;br&gt;举个例子：其中一台源宿主机上面5台虚拟机，那我们就给这台源宿主机选择1-5台目标主机，其他源宿主同理。同时触发迁移任务。后端会排队迁移。&lt;br&gt;注意事项：避免选择的目标宿主机冲突" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1096" y="230" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F3VnkXnHqMvUYfFMPts-4" target="5F3VnkXnHqMvUYfFMPts-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-4" value="开始批量迁移&lt;br&gt;迁移过程因磁盘大小不同，有快有慢&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1131" y="380" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5F3VnkXnHqMvUYfFMPts-6" value="第二天工作日检查这20台源宿主机上面是否还有虚拟机存在&lt;br&gt;如果有，就是迁移失败的，后端查看失败具体原因，必要时可以修正迁移策略" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1066" y="505" width="350" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

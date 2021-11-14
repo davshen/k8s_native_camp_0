@@ -1,13 +1,19 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
+	"time"
+
+	_ "net/http/pprof"
 	//"github.com/golang/glog"
 )
 
@@ -15,16 +21,38 @@ func main() {
 	flag.Set("v", "4")
 	//glog.V(2).Info("Starting http server...")
 	log.Println("start")
-	http.HandleFunc("/", rootHandler)
-	http.HandleFunc("/healthz", healthz)
-	http.HandleFunc("/sayhelloName", sayhelloName)
-	http.HandleFunc("/addHeader", addHeader)
-	fmt.Println("Runing...")
-	err := http.ListenAndServe(":80", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", rootHandler)
+	//http.HandleFunc("/", rootHandler)
+	mux.HandleFunc("/healthz", healthz)
+	mux.HandleFunc("/sayhelloName", sayhelloName)
+	mux.HandleFunc("/addHeader", addHeader)
 
+	srv := http.Server{
+		Addr:    ":80",
+		Handler: mux,
+	}
+	done := make(chan os.Signal, 1)
+	signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+
+	go func() {
+		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Fatal("listen: %s\n", err)
+		}
+	}()
+	log.Print("Server Started")
+	<-done
+	log.Print("Server Stopped")
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer func() {
+		// extra handling here
+		cancel()
+	}()
+
+	if err := srv.Shutdown(ctx); err != nil {
+		log.Fatalf("Server Shutdown Failed:%+v", err)
+	}
+	log.Printf("Server Exited Properly")
 }
 
 func addHeader(w http.ResponseWriter, r *http.Request) {
@@ -39,7 +67,6 @@ func addHeader(w http.ResponseWriter, r *http.Request) {
 	var VERSION string
 	VERSION = os.Getenv("VERSION")
 	fmt.Println("VERSION", VERSION)
-
 }
 
 func sayhelloName(w http.ResponseWriter, r *http.Request) {

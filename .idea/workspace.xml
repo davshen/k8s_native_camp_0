@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/httpserver/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Makefile" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -62,6 +66,7 @@
     <MESSAGE value="[update] httpserver:v1.1" />
     <MESSAGE value="[update] dockerfile makefile build.sh ." />
     <MESSAGE value="[update] dockerfile makefile build.sh v1.0." />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] dockerfile makefile build.sh v1.0." />
+    <MESSAGE value="[update] dockerfile makefile build.sh v2.0." />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] dockerfile makefile build.sh v2.0." />
   </component>
 </project>

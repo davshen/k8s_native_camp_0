@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: http-server
+  template:
+    metadata:
+      labels:
+        app: http-server
+    spec:
+      containers:
+        - name: http-server
+          image: shendawei/http-server:v1.1
+          #image: 6e8d397f95cf
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: 1Gi
+              cpu: 1
+            requests:
+              memory: 256Mi
+              cpu: 100m
+          livenessProbe:
+            httpGet:
+              ### this probe will fail with 404 error code
+              ### only httpcode between 200-400 is retreated as success
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              ### this probe will fail with 404 error code
+              ### only httpcode between 200-400 is retreated as success
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            successThreshold: 2
+      serviceAccountName: http

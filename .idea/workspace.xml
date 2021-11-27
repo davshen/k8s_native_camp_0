@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/httpserver/http_server.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserver/bin/amd64/httpserver" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/bin/amd64/httpserver" afterDir="false" />
-    </list>
+    <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +66,7 @@
     <MESSAGE value="[update] dockerfile makefile build.sh v2.0." />
     <MESSAGE value="[update] add graceful stop." />
     <MESSAGE value="[update] makefile." />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] makefile." />
+    <MESSAGE value="[update] httpserver.yaml and service" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] httpserver.yaml and service" />
   </component>
 </project>

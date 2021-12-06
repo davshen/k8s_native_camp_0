@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="" />
+    <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/httpserver/grafana-dashboard/httpserver-latency.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/metrics/metrics.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/http_server.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/specs/http_server.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/httpserver_service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/specs/httpserver_service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
@@ -17,12 +31,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/httpserver/specs" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -67,6 +87,7 @@
     <MESSAGE value="[update] add graceful stop." />
     <MESSAGE value="[update] makefile." />
     <MESSAGE value="[update] httpserver.yaml and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] httpserver.yaml and service" />
+    <MESSAGE value="[update] httpserver.yaml and service v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] httpserver.yaml and service v2" />
   </component>
 </project>

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/signal"
@@ -13,20 +14,23 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/golang/glog"
+	"github.com/k8s_native_camp_0/httpserver/metrics"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	_ "net/http/pprof"
-	//"github.com/golang/glog"
 )
 
 func main() {
 	flag.Set("v", "4")
-	//glog.V(2).Info("Starting http server...")
-	log.Println("start")
+	glog.V(2).Info("Starting http server...")
+	//log.Println("start")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", rootHandler)
 	//http.HandleFunc("/", rootHandler)
 	mux.HandleFunc("/healthz", healthz)
 	mux.HandleFunc("/sayhelloName", sayhelloName)
 	mux.HandleFunc("/addHeader", addHeader)
+	mux.Handle("/metrics", promhttp.Handler())
 
 	srv := http.Server{
 		Addr:    ":80",
@@ -87,9 +91,18 @@ func healthz(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
 }
 
+func randInt(min int, max int) int {
+	rand.Seed(time.Now().UTC().UnixNano())
+	return min + rand.Intn(max-min)
+}
+
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("entering root handler")
+	glog.V(4).Info("entering root handler")
+	timer := metrics.NewTimer()
+	defer timer.ObserveTotal()
 	user := r.URL.Query().Get("user")
+	delay := randInt(10, 2000)
 	if user != "" {
 		io.WriteString(w, fmt.Sprintf("hello [%s]\n", user))
 	} else {
@@ -99,4 +112,5 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	for k, v := range r.Header {
 		io.WriteString(w, fmt.Sprintf("%s=%s\n", k, v))
 	}
+	glog.V(4).Infof("Respond in %d ms", delay)
 }

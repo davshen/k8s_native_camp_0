@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6acc0ca1-08c8-47a1-8c48-a5bbcf9716f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/httpserver/grafana-dashboard/httpserver-latency.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserver/metrics/metrics.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/istio-specs.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/jaeger.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/readme.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/service0.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/service1.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver/specs/service2.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserver/http_server.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/specs/http_server.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserver/httpserver_service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/specs/httpserver_service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserver/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +38,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/httpserver/specs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/httpserver/specs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/httpserver/specs" />
     </key>
@@ -88,6 +92,7 @@
     <MESSAGE value="[update] makefile." />
     <MESSAGE value="[update] httpserver.yaml and service" />
     <MESSAGE value="[update] httpserver.yaml and service v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] httpserver.yaml and service v2" />
+    <MESSAGE value="[update] metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] metrics" />
   </component>
 </project>
